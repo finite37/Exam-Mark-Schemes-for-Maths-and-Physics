@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/finit/OneDrive/Desktop/Exam-Mark-Schemes-for-Maths-and-Physics/main.tex.tex
-(c:/Users/finit/OneDrive/Desktop/Exam-Mark-Schemes-for-Maths-and-Physics/main.tex.tex
+**c:/Users/finit/OneDrive/Desktop/Exam-Mark-Schemes-for-Maths-and-Physics/main.tex
+(c:/Users/finit/OneDrive/Desktop/Exam-Mark-Schemes-for-Maths-and-Physics/main.tex
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
 (C:\Users\finit\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -239,8 +239,8 @@ Package translations Info: No language package found. I am going to use `english
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box64
-) (main.tex.aux)
-\openout1 = `main.tex.aux'.
+) (main.aux)
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
@@ -317,7 +317,7 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 
 [1
 
-{C:/Users/finit/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.tex.aux)
+{C:/Users/finit/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
@@ -325,14 +325,14 @@ L3 programming layer <2024-11-02>
  ) 
 Here is how much of TeX's memory you used:
  8291 strings out of 473649
- 187231 string characters out of 5717913
- 554456 words of memory out of 5000000
+ 187179 string characters out of 5717913
+ 554448 words of memory out of 5000000
  31349 multiletter control sequences out of 15000+600000
  558367 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,5n,80p,297b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,5n,80p,293b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/finit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on main.tex.pdf (1 page, 10472 bytes).
+Output written on main.pdf (1 page, 10472 bytes).
 PDF statistics:
  11 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
