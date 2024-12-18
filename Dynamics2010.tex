@@ -13,6 +13,8 @@
 \usepackage{esdiff}
 \usepackage{cancel}
 \usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
 
 \DeclareMathOperator{\di}{d\!}
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
@@ -30,11 +32,11 @@
 
     N1L.  Every object continues in its state of rest or uniform motion in a straight line unless acted upon by a resultant force.
 
-    N2L.  The acceleration of an object is directly proportional to the resultant force acting on it and inversely proportional to its mass. The direction of the acceleration is in the direction of the resultant force.
+    N2L.  The rate of change of momentum of a body is proportional to the resultant force acting on the body and is in the direction of that force
 
     N3L.  Action and reaction are equal and opposite, and act on different bodies.
 
-    [By, Week 4: Newton's Laws]
+    [By, Week 4: Newton's Laws, Week 9: Momentum and Collisions]
 
     bi.
 
@@ -63,18 +65,18 @@
     d.
 
     \begin{equation*}
-        L=\omega_0 I_0=30\cdot6=180\implies\omega_fI_f=180\implies\omega_f(6+9)=180\implies\omega_f=30\text{ rads$^{-1}$}
+        L=\omega_0 \mathcal{I}_0=30\cdot6=180\implies\omega_f\mathcal{I}_f=180\implies\omega_f(6+9)=180\implies\omega_f=30\text{ rads$^{-1}$}
     \end{equation*}
 
     ei.
 
     \begin{equation*}
         \begin{split}
-            R_E&=6.4\cdot10^6m\qquad h=630\cdot10^3m\\
+            R_E&=6.4\cdot10^6\text{ m}\qquad h=630\cdot10^3\text{ m}\\
             r=(R_E+r)&=7.03\cdot10^6\\
             F_g&=\frac{GM_Em}{r^2}\quad\&\quad F_c=\frac{mv^2}{r}\\
             \implies\frac{mv^2}{r}&=\frac{GM_Em}{r^2}\\
-            \implies v&=\sqrt{\frac{GM_e}{r}}=7530\text{ ms$^-1$}
+            \implies v&=\sqrt{\frac{GM_e}{r}}=7530\text{ ms$^{-1}$}
         \end{split}
     \end{equation*}
 
@@ -83,4 +85,198 @@
         \frac{2\pi}{T}=\omega=\frac{v}{r}\implies T=\frac{2\pi r}{\omega}=5867\text{ s}
     \end{equation*}
 
+    Q2a.
+
+    Because the pulley and chord itself have negligable mass they require negligable force to accelerate, and along with the chord being inextensable the tension is applied equally at the chords ends hence each $\di l$ of the chord also must experience this tension equally.  
+
+    b.
+
+    \begin{tikzpicture}
+        % Original object (e.g., a box with forces)
+        \begin{scope}[shift={(0,0)}]
+            \draw[thick] (0,0) rectangle (2,1) node[midway] {$m_1$};
+            \draw[->,thick] (1,1) -- (1,2.5) node[above] {$R_1=m_1g$};
+            \draw[->,thick] (1,0) -- (1,-1.5) node[below] {$m_1g$};
+            \draw[->,thick] (2,0.5) -- (3.5,0.5) node[right] {$F_{\text{Fric.1}}$};
+        \end{scope}
+        
+        % Translated object (shifted by (3,2))
+        \begin{scope}[shift={(8,0)}]
+            \draw[thick] (0,0) rectangle (2,1) node[midway] {$m_2$};
+            \draw[->,thick] (1,1) -- (1,2.5) node[above] {$R_2=(m_1+m_2)g$};
+            \draw[->,thick] (1,0) -- (1,-1.5) node[below] {$(m_1+m_2)g$};
+            \draw[->,thick] (2,0.5) -- (3.5,0.5) node[right] {$T$};
+            \draw[->,thick] (0,0.5) -- (-1.5,0.5) node[left] {$R_2\mu_k$};
+        \end{scope}
+
+        % Translated object (shifted by (3,2))
+        \begin{scope}[shift={(13,0)}]
+            \draw[thick] (0,0) rectangle (2,1) node[midway] {$m_3$};
+            \draw[->,thick] (1,1) -- (1,2.5) node[above] {$T$};
+            \draw[->,thick] (1,0) -- (1,-1.5) node[below] {$m_3g$};
+        \end{scope}
+
+        \begin{scope}[shift={(17,2)}]
+            % Draw x and y axes
+            \draw[->] (-0.1,0) -- (1,0) node[anchor=north] {\text{+.ve }$x$};
+            \draw[->] (0,-0.1) -- (0,1) node[anchor=east] {\text{+.ve }$y$};
+        \end{scope}
+        
+    \end{tikzpicture}
+
+    c.
+
+    \begin{equation*}
+        \begin{split}
+            a_1=\frac{F_{\text{Fric.1}}}{m_1}=a\text{ (i)}\quad a_2=\frac{T-(m_1+m_2)g\mu_k}{m_1+m_2}=a\text{ (ii)}\quad a_3=\frac{T-m_3g}{m_3}=-a\text{ (iii)}
+        \end{split}
+    \end{equation*}
+
+    d.
+    as $F_{fric.\;\max}=R\mu_s$ then by (i):
+    \begin{equation*}
+        a_{\max}=\frac{F_{fric.1\;\max}}{m_1}=\frac{R_1\mu_s}{m_1}=g\mu_s\text{ (iv)}
+    \end{equation*}
+
+    e.
+
+    from (ii), (iii) and substituting in $a_{\max}=g\mu_s$ from (iv):
+
+
+    \begin{equation*}
+        \begin{alignedat}{2}
+            \frac{T-(m_1+m_2)g\mu_k}{m_1+m_2} &= g\mu_s \quad & \frac{T-m_3g}{m_3} &= -g\mu_s \\
+            \implies T &= g(m_1+m_2)(\mu_s+\mu_k) \quad & T &= m_3g(1-\mu_s)\\
+            \implies (m_1+m_2)(\mu_s+\mu_k)&=m_3(1-\mu_s)\\
+            \implies \frac{(m_1+m_2)(\mu_s+\mu_k)}{1-\mu_s}&=m_3\qquad\text{As required.}
+        \end{alignedat}
+    \end{equation*}
+
+    Q3a.
+    
+    Conservation of Linear Momentum. If no external forces act on a system of interacting bodies, then the total momentum of the system is conserved.
+    
+    [by: Week 9: Momentum and Collisions]
+
+    bi.
+
+    \begin{equation*}
+        \begin{alignedat}{3}
+        KE_f&=\Delta KE+KE_0\quad\&\quad&\Delta KE&=-\Delta GPE=mg\Delta h\quad\&\quad&KE&=\frac{mv^2}{2}\\
+        \implies KE_{c\;f}&=\frac{m_{c}v_{c\;0}^2}{2}+m_{c}g\Delta h=3050\text{ J}
+        \end{alignedat}
+    \end{equation*}
+
+    ii.
+
+    \begin{equation*}
+        \begin{alignedat}{3}
+            KE_f&=\frac{m_{c}v_{c\;f}^2}{2}\\
+            \implies v_{c\;f}=\sqrt{\frac{2KE_f}{m_{c}}}=7.81\text{ ms$^{-1}$}
+            \end{alignedat}
+    \end{equation*}
+
+    iii.
+
+    \begin{equation*}
+        \begin{alignedat}{1}
+            \hat{\underline{i}}\cdot\sum_{i=1,2,c}m_i\underline{v}_i&=\hat{\underline{i}}\cdot \underline{v}\sum_{i=1,2,c}m_i\\
+            \implies v_{aft}&=\frac{\hat{\underline{i}}\cdot\sum_{i=1,2,c}m_i\underline{v}_i}{\hat{\underline{i}}\cdot\sum_{i=1,2,c}m_i}\\
+            \text{As: }\hat{\underline{i}}\cdot{\underline{v}}_1&=v_1,\quad\hat{\underline{i}}\cdot{\underline{v}}_2=v_2,\quad\hat{\underline{i}}\cdot{\underline{v}}_c=1.5\cos{30^\circ}=\frac{3\sqrt{3}}{4},\quad\hat{\underline{i}}\cdot{\underline{v}}_{aft.}=v_{aft.}\\
+            \implies v_{aft.}&=0.245\text{ ms$^{-1}$}
+            \end{alignedat}
+    \end{equation*}
+
+    iv.
+
+    \begin{equation*}
+        \begin{alignedat}{2}
+            KE_{bef.}&=KE_f+\frac{m_1v_1^2}{2}+\frac{m_2v_2^2}{2}=3240\text{ J}\quad&\quad KE_{aft.}&=\frac{\big(\sum_{i=1,2,c}m_i\big)v_{aft.}^2}{2}=33.1\text{ J}\\
+            \implies \Delta KE&=3209\text{ J}
+        \end{alignedat}
+    \end{equation*}
+    
+    (Note: given answer is $3213$ J probably due to differing constants used)
+
+    c.
+
+    \begin{equation*}
+        \begin{alignedat}{1}
+            F_{Ret.}&=1.7t\implies a=-\frac{1.7t}{\big(\sum_{i=1,2,c}m_i\big)}\implies \Delta v=\int_0^{\Delta t}-\frac{1.7\tau}{\big(\sum_{i=1,2,c}m_i\big)}\di \tau=-\frac{1.7\Delta t}{2\big(\sum_{i=1,2,c}m_i\big)}\\
+            \text{As: }\Delta v&=-v_{aft.}\implies-v_{aft.}=-\frac{1.7t}{\big(2\sum_{i=1,2,c}m_i\big)}\implies \Delta t=\sqrt{\frac{2v_{aft.}\big(\sum_{i=1,2,c}m_i\big)}{1.7}}=17.8\text{ s}
+        \end{alignedat}
+    \end{equation*}
+
+    4a.
+    
+    In case (a) the mechanical energy of the sphere is conserved as all GPE is converted to KE as the friction force is over no distance so does no work, whilst in case (b) there is mechanical energy loss due to friction, hence mechanical energy isn't conserved in case (b).
+
+    b.
+
+    As there is no slipping the constraint is $v=\omega r$
+
+    c.
+
+    \begin{equation*}
+        \begin{alignedat}{1}
+            \Delta GPE&=\Delta KE_{rot.}+\Delta KE_{lin.}\\
+            \implies mgh&=\frac{mv_f^2}{2}+\frac{\mathcal{I}\omega^2}{2}=\frac{mv_f^2}{2}+\frac{mv_f^2}{5}\\
+            \implies v=&\sqrt{\frac{10}{7}gh}
+        \end{alignedat}
+    \end{equation*}
+   
+   d.
+    \begin{center}
+        \begin{tikzpicture}[scale=2]
+            % Define the angle beta and radius r
+            \def\theta{30} % Angle in degrees
+            \def\r{1}    % Radius of the ball
+            \def\d{2}    % Distance along the slope from the origin to the point of contact
+
+            % Calculate coordinates
+            \coordinate (P) at ({\d*cos(\theta)},{\d*sin(\theta)}); % Point of contact
+            \coordinate (O) at ({\d*cos(\theta) - \r*sin(\theta)},{\d*sin(\theta) + \r*cos(\theta)}); % Center of the ball
+
+            % Draw the slope
+            \draw[thick] (0,0) -- ({5*cos(\theta)},{5*sin(\theta)});
+
+            % Draw the ball
+            \draw (O) circle (\r);
+
+            % Label the radius
+            \draw[dashed] (O) -- ($(O) + ({\theta + 180}:\r)$) node[midway, left] {$r$};
+
+            % Draw the force of gravity
+            \draw[->, thick] (O) -- ($(O) + (0,-2*\r)$) node[below] {$F_g$};
+
+            % Draw the reaction force R
+            \draw[->, thick] (P) -- ($(P) + ({\theta + 90}:1.5*\r)$) node[right] {$R$};
+
+            % Mark the angle beta
+            \draw (0.5,0) arc (0:\theta:0.5) node[midway, right] {$\beta$};
+
+            % Draw the reaction force R
+            \draw[->, thick] (P) -- ($(P) + ({\theta}:1*\r)$) node[right] {$F_{fric}$};
+            
+        \end{tikzpicture}
+    \end{center}
+
+    From, $F=ma$ and $\tau=\mathcal{I}\omega=\frac{\mathcal{I}a}{r}$:
+
+    \begin{equation*}
+        \begin{alignedat}{2}
+            F&=ma=F_{fric}-mg\sin{\beta}\quad&\quad\tau&=\frac{\mathcal{I}(-a)}{r}=rF_{fric}\\
+            \implies F_{fric}&=\frac{\mathcal{I}(-a)}{r^2}=-\frac{2ma}{5}\\
+            \implies ma&=-\frac{2ma}{5}-mg\sin{\beta}
+            \implies a=-\frac{5}{7}g\sin\beta
+        \end{alignedat}
+    \end{equation*}
+
+    Hence a constant acceleration down the slope with a magnitude of $\frac{5}{7}g\sin\beta$. As required.
+
+    (Note: minus sign in $\frac{\mathcal{I}(-a)}{r}$ comes from a positive angular acceleration resulting in a negative linear accleration given the slope being under the sphere)
+
+    (Note: If it was not specified that you must use forces and torques, differentiating the velocity equation with respect to time would be quickest)
+
 \end{document}
+
