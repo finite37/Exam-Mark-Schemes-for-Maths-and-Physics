@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx,blindtext}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    top=8mm,
+    bottom=8mm,
+    left=8mm,
+    right=8mm,
+    ]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{esdiff}
+\usepackage{cancel}
+\usepackage{siunitx}
+
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+\setlength{\parindent}{0pt}
+
+\title{Dynamics Jan 2010 Mark Scheme}
+\author{Thomas Romanus}
+\date{\today}
+
+\begin{document}
+
+    \maketitle
+
+    Q1a.
+
+    N1L.  Every object continues in its state of rest or uniform motion in a straight line unless acted upon by a resultant force.
+
+    N2L.  The acceleration of an object is directly proportional to the resultant force acting on it and inversely proportional to its mass. The direction of the acceleration is in the direction of the resultant force.
+
+    N3L.  Action and reaction are equal and opposite, and act on different bodies.
+
+    [By, Week 4: Newton's Laws]
+
+    bi.
+
+    \begin{equation*}
+        \underline{r}=\underline{r}_2-\underline{r}_1=(2,10,5)^T-(4,3,8)^T=(-2,7,3)^T\text{ m}
+    \end{equation*}
+
+    ii.
+
+    \begin{equation*}
+        \underline{r}\cdot\underline{F}=(-2,7,3)^T\cdot (5,3,-8)^T=35J
+    \end{equation*}
+
+    (Note: bii is actually $\int_{(2,10,5)^T}^{(4,3,8)^T}(5,3,-8)^T\cdot\di \underline{r}=5x+3y-8z+c|_{(2,10,5)^T}^{(4,3,8)^T}=35J$ because $\nabla (5x+3y-8z+c)=\underline{F}$ hence no need to specify the path.)
+
+    c.
+
+    \begin{equation*}
+        -\nabla U(\underline{r})=F(\underline{r})\implies F(x)-\diffp{U}{x}=\frac{k}{x^2}
+    \end{equation*}
+
+    Hence the force is away from the orgin
+
+    (Note: x is distance from orgin not displacement hence cannot be negative and a postive values of force corrispond to a force away from the orgin.)
+
+    d.
+
+    \begin{equation*}
+        L=\omega_0 I_0=30\cdot6=180\implies\omega_fI_f=180\implies\omega_f(6+9)=180\implies\omega_f=30\text{ rads$^{-1}$}
+    \end{equation*}
+
+    ei.
+
+    \begin{equation*}
+        \begin{split}
+            R_E&=6.4\cdot10^6m\qquad h=630\cdot10^3m\\
+            r=(R_E+r)&=7.03\cdot10^6\\
+            F_g&=\frac{GM_Em}{r^2}\quad\&\quad F_c=\frac{mv^2}{r}\\
+            \implies\frac{mv^2}{r}&=\frac{GM_Em}{r^2}\\
+            \implies v&=\sqrt{\frac{GM_e}{r}}=7530\text{ ms$^-1$}
+        \end{split}
+    \end{equation*}
+
+    ii.
+    \begin{equation*}
+        \frac{2\pi}{T}=\omega=\frac{v}{r}\implies T=\frac{2\pi r}{\omega}=5867\text{ s}
+    \end{equation*}
+
+\end{document}
